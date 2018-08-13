@@ -1,0 +1,49 @@
+//
+//  ElectricityBillViewController.swift
+//  ElectricityBill
+//
+//  Created by MacStudent on 2018-08-08.
+//  Copyright © 2018 MacStudent. All rights reserved.
+//
+
+import UIKit
+
+class ElectricityBillViewController: UIViewController {
+
+    @IBOutlet weak var txtcustomerid: UITextField!
+    @IBOutlet weak var txtcustomername: UITextField!
+    @IBOutlet weak var txtbilldate: UITextField!
+    @IBOutlet weak var txtunitconsume: UITextField!
+    @IBOutlet weak var Iblgender: UITextField!
+    
+    var electricitybill: ElectricityBill
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func btncalculate(_ sender: UIButton) {
+        electricitybill = ElectricityBill(customerId: Int(txtCustid.txt!), customerName: txtCustomer.txt!, gender: Gender.Male, billDate:Date(),unitconsume: Int(txtTotalUnit.txt!), totalbillamount: 0)
+        performSegue(withIdentifier: "gotobill", sender: self)
+        
+    }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

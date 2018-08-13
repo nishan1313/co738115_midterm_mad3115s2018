@@ -8,16 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        perform(#selector(self.showLoginScreen), with: nil, afterDelay: 5)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @objc func showLoginScreen()
+    {
+        
+        performSegue(withIdentifier: "gotolgin", sender: self)
+        
     }
 
 
